@@ -1,4 +1,4 @@
-package su.demands.darkswing.elements;
+package su.demands.darkswing.elements.checkbox;
 
 import su.demands.darkswing.Colors;
 

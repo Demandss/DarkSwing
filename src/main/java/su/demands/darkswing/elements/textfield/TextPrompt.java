@@ -1,4 +1,4 @@
-package su.demands.darkswing.elements;
+package su.demands.darkswing.elements.textfield;
 
 import lombok.Getter;
 import lombok.Setter;
