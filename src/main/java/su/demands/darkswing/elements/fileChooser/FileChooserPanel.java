@@ -74,7 +74,12 @@ public class FileChooserPanel extends JPanel {
     public void setBounds(int x, int y, int width, int height) {
         super.setBounds(x, y, width, height);
 
-        textField.setBounds(0,0,getWidth() - 46,20);
+        int padding = 23;
+
+        if (isShowPlusButton())
+            padding *= 2;
+
+        textField.setBounds(0,0,getWidth() - padding,20);
         searchFile.setBounds(textField.getWidth() + 3,0,20,20);
 
         if (isShowPlusButton())
