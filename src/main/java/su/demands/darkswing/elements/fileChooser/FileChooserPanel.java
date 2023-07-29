@@ -19,8 +19,6 @@ public class FileChooserPanel extends JPanel {
     private final su.demands.darkswing.elements.button.Button searchFile = new su.demands.darkswing.elements.button.Button();
     private su.demands.darkswing.elements.button.Button plusButton;
 
-    protected final MatteBorder border = BorderFactory.createMatteBorder(1,1,1,1, Colors.SUB_SELECT);
-
     private boolean showPlusButton = false;
 
     public void showPlusButton(boolean state) {
@@ -33,7 +31,7 @@ public class FileChooserPanel extends JPanel {
             plusButton.setFont(textField.getFont().deriveFont(textField.getFont().getSize() + 2f));
             plusButton.setBorderPainted(true);
             plusButton.setBackground(getBackground());
-            plusButton.setBorder(border);
+            plusButton.setBorder(BorderFactory.createMatteBorder(1,1,1,1, Colors.SUB_SELECT));
 
             add(plusButton);
         } else if (!showPlusButton && plusButton != null) {
@@ -44,6 +42,7 @@ public class FileChooserPanel extends JPanel {
     public FileChooserPanel() {
         setBackground(Colors.FRAME_BACKGROUND);
         setPreferredSize(new Dimension(30,20));
+        MatteBorder border = BorderFactory.createMatteBorder(1,1,1,1, Colors.SUB_SELECT);
 
         textField.setFont(new Font("Inter", Font.PLAIN,12));
         textField.setBackground(getBackground());
@@ -75,18 +74,10 @@ public class FileChooserPanel extends JPanel {
     public void setBounds(int x, int y, int width, int height) {
         super.setBounds(x, y, width, height);
 
-        height = Math.max(height, 20);
-        width = Math.max(width, 20);
-
-        int padding = width + 6;
+        textField.setBounds(0,0,getWidth() - 46,20);
+        searchFile.setBounds(textField.getWidth() + 3,0,20,20);
 
         if (isShowPlusButton())
-            padding += width;
-
-        textField.setBounds(0,0,getWidth() - padding,height);
-        searchFile.setBounds(textField.getWidth() + 3,0,width,height);
-
-        if (isShowPlusButton())
-            plusButton.setBounds(textField.getWidth() + searchFile.getWidth() + 6,0,width,height);
+            plusButton.setBounds(textField.getWidth() + searchFile.getWidth() + 6,0,20,20);
     }
 }
