@@ -19,13 +19,31 @@ public class FileChooserPanel extends JPanel {
     private final su.demands.darkswing.elements.button.Button searchFile = new su.demands.darkswing.elements.button.Button();
     private su.demands.darkswing.elements.button.Button plusButton;
 
-    @Setter
+    protected final MatteBorder border = BorderFactory.createMatteBorder(1,1,1,1, Colors.SUB_SELECT);
+
     private boolean showPlusButton = false;
+
+    public void showPlusButton(boolean state) {
+        this.showPlusButton = state;
+
+        if (plusButton == null && showPlusButton) {
+
+            plusButton = new Button();
+            plusButton.setText("+");
+            plusButton.setFont(textField.getFont().deriveFont(textField.getFont().getSize() + 2f));
+            plusButton.setBorderPainted(true);
+            plusButton.setBackground(getBackground());
+            plusButton.setBorder(border);
+
+            add(plusButton);
+        } else if (!showPlusButton && plusButton != null) {
+            remove(plusButton);
+        }
+    }
 
     public FileChooserPanel() {
         setBackground(Colors.FRAME_BACKGROUND);
         setPreferredSize(new Dimension(30,20));
-        MatteBorder border = BorderFactory.createMatteBorder(1,1,1,1, Colors.SUB_SELECT);
 
         textField.setFont(new Font("Inter", Font.PLAIN,12));
         textField.setBackground(getBackground());
@@ -47,18 +65,6 @@ public class FileChooserPanel extends JPanel {
 
         add(textField);
         add(searchFile);
-
-        if (isShowPlusButton())
-        {
-            plusButton = new Button();
-            plusButton.setText("+");
-            plusButton.setFont(textField.getFont().deriveFont(textField.getFont().getSize() + 2f));
-            plusButton.setBorderPainted(true);
-            plusButton.setBackground(getBackground());
-            plusButton.setBorder(border);
-
-            add(plusButton);
-        }
     }
 
     public Path getPath() {
