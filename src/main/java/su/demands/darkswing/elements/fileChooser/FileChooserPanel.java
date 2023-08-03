@@ -15,11 +15,11 @@ import java.nio.file.Paths;
 @Getter
 public class FileChooserPanel extends JPanel {
 
-    private final su.demands.darkswing.elements.textfield.TextField textField = new TextField();
-    private final su.demands.darkswing.elements.button.Button searchFile = new su.demands.darkswing.elements.button.Button();
-    private su.demands.darkswing.elements.button.Button plusButton;
+    protected final su.demands.darkswing.elements.textfield.TextField textField = new TextField();
+    protected final su.demands.darkswing.elements.button.Button searchFile = new su.demands.darkswing.elements.button.Button();
+    protected su.demands.darkswing.elements.button.Button plusButton;
 
-    private boolean showPlusButton = false;
+    protected boolean showPlusButton = false;
 
     public void showPlusButton(boolean state) {
         this.showPlusButton = state;

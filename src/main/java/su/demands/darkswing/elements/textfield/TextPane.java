@@ -12,7 +12,7 @@ import java.awt.*;
 @Getter
 public class TextPane extends JScrollPane {
 
-    private final JTextPane textArea = new JTextPane();
+    protected final JTextPane textArea = new JTextPane();
 
     @Setter
     private String textStyle = "Inter";

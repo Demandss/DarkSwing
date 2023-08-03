@@ -23,8 +23,8 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
         FOCUS_LOST;
     }
 
-    private final JTextComponent component;
-    private final Document document;
+    protected final JTextComponent component;
+    protected final Document document;
 
     @Getter @Setter
     private Show show;

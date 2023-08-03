@@ -8,7 +8,7 @@ import javax.swing.*;
 @Getter
 public class FormattedTextField extends JFormattedTextField {
 
-    private final TextPrompt textPrompt;
+    protected final TextPrompt textPrompt;
 
     public FormattedTextField() {
         this(TextPrompt.Show.ALWAYS);

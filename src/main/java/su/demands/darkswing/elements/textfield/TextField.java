@@ -8,7 +8,7 @@ import javax.swing.*;
 @Getter
 public class TextField extends JTextField {
 
-    private final TextPrompt textPrompt;
+    protected final TextPrompt textPrompt;
 
     public TextField() {
         this(TextPrompt.Show.ALWAYS);
