@@ -8,6 +8,24 @@ import java.awt.*;
 
 public class Button extends JButton {
     public Button() {
+        this(null, null);
+    }
+
+    public Button(Icon icon) {
+        this(null, icon);
+    }
+
+    public Button(String text) {
+        this(text, null);
+    }
+
+    public Button(Action a) {
+        super(a);
+    }
+
+    public Button(String text, Icon icon) {
+        super(text, icon);
+
         setForeground(Colors.TEXT_FOREGROUND);
         setBackground(Colors.ELEMENTS_BACKGROUND);
         setFocusPainted(false);
@@ -28,4 +46,5 @@ public class Button extends JButton {
             }
         });
     }
+
 }
