@@ -11,6 +11,7 @@ public class DarkScrollBar extends JScrollBar {
     public DarkScrollBar(int orientation, int value, int extent, int min, int max) {
         super(orientation, value, extent, min, max);
 
+        setBorder(BorderFactory.createMatteBorder(0,1,0,0,DarkSwingColors.SUB_SELECT));
         setBackground(DarkSwingColors.ELEMENTS_BACKGROUND);
         setUI(new BasicScrollBarUI() {
             @Override
@@ -23,7 +24,7 @@ public class DarkScrollBar extends JScrollBar {
             protected JButton createDecreaseButton(int orientation) {
                 JButton button = super.createDecreaseButton(orientation);
                 button.setBackground(DarkSwingColors.ELEMENTS_BACKGROUND);
-                button.setBorder(BorderFactory.createMatteBorder(0,0,1,0, Color.decode("#346BD8")));
+                button.setBorder(BorderFactory.createMatteBorder(0,0,1,0, DarkSwingColors.SUB_SELECT));
                 return button;
             }
 
@@ -31,7 +32,7 @@ public class DarkScrollBar extends JScrollBar {
             protected JButton createIncreaseButton(int orientation) {
                 JButton button = super.createDecreaseButton(orientation);
                 button.setBackground(DarkSwingColors.ELEMENTS_BACKGROUND);
-                button.setBorder(BorderFactory.createMatteBorder(1,0,0,0,Color.decode("#346BD8")));
+                button.setBorder(BorderFactory.createMatteBorder(1,0,0,0,DarkSwingColors.SUB_SELECT));
                 return button;
             }
         });
