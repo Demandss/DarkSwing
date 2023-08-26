@@ -1,33 +1,33 @@
 package su.demands.darkswing.elements.button;
 
-import su.demands.darkswing.Colors;
+import su.demands.darkswing.DarkSwingColors;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
-public class Button extends JButton {
-    public Button() {
+public class DarkButton extends JButton {
+    public DarkButton() {
         this(null, null);
     }
 
-    public Button(Icon icon) {
+    public DarkButton(Icon icon) {
         this(null, icon);
     }
 
-    public Button(String text) {
+    public DarkButton(String text) {
         this(text, null);
     }
 
-    public Button(Action a) {
+    public DarkButton(Action a) {
         super(a);
     }
 
-    public Button(String text, Icon icon) {
+    public DarkButton(String text, Icon icon) {
         super(text, icon);
 
-        setForeground(Colors.TEXT_FOREGROUND);
-        setBackground(Colors.ELEMENTS_BACKGROUND);
+        setForeground(DarkSwingColors.TEXT_FOREGROUND);
+        setBackground(DarkSwingColors.ELEMENTS_BACKGROUND);
         setFocusPainted(false);
         setBorderPainted(false);
         setRolloverEnabled(false);
@@ -38,7 +38,7 @@ public class Button extends JButton {
             protected void paintButtonPressed(Graphics g, AbstractButton b) {
                 super.paintButtonPressed(g, b);
                 if (getModel().isPressed()) {
-                    g.setColor(Colors.SELECT);
+                    g.setColor(DarkSwingColors.SELECT);
                 } else {
                     g.setColor(getBackground());
                 }

@@ -2,31 +2,31 @@ package su.demands.darkswing.elements.tabbedPane;
 
 import lombok.Getter;
 import lombok.Setter;
-import su.demands.darkswing.Colors;
+import su.demands.darkswing.DarkSwingColors;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.*;
 
 @Getter
-public class TabbedPane extends JTabbedPane {
+public class DarkTabbedPane extends JTabbedPane {
 
     @Setter
     private boolean paintingBorders = false;
 
-    public TabbedPane() {
-        setForeground(Colors.TEXT_FOREGROUND);
-        setBackground(Colors.FRAME_BACKGROUND);
+    public DarkTabbedPane() {
+        setForeground(DarkSwingColors.TEXT_FOREGROUND);
+        setBackground(DarkSwingColors.FRAME_BACKGROUND);
 
         setUI(new BasicTabbedPaneUI() {
             @Override
             protected void installDefaults() {
                 super.installDefaults();
-                highlight = Colors.FRAME_BACKGROUND;
-                lightHighlight = Colors.FRAME_BACKGROUND;
-                shadow = Colors.FRAME_BACKGROUND;
-                darkShadow = Colors.FRAME_BACKGROUND;
-                focus = Colors.SUB_SELECT;
+                highlight = DarkSwingColors.FRAME_BACKGROUND;
+                lightHighlight = DarkSwingColors.FRAME_BACKGROUND;
+                shadow = DarkSwingColors.FRAME_BACKGROUND;
+                darkShadow = DarkSwingColors.FRAME_BACKGROUND;
+                focus = DarkSwingColors.SUB_SELECT;
             }
 
             @Override
@@ -43,7 +43,7 @@ public class TabbedPane extends JTabbedPane {
                     int w = width - insets.right - insets.left;
 
                     y += calculateTabAreaHeight(tabPlacement, runCount, maxTabHeight) + 1;
-                    g.setColor(Color.BLACK);
+                    g.setColor(DarkSwingColors.DARKENED_BORDER);
 
                     g.fillRect(x, y, w, 1);
                 }
@@ -54,7 +54,7 @@ public class TabbedPane extends JTabbedPane {
                                               int tabIndex,
                                               int x, int y, int w, int h,
                                               boolean isSelected ) {
-                g.setColor(!isSelected ? tabPane.getBackgroundAt(tabIndex) : Colors.SUB_SELECT);
+                g.setColor(!isSelected ? tabPane.getBackgroundAt(tabIndex) : DarkSwingColors.SUB_SELECT);
                 switch (tabPlacement) {
                     case LEFT -> g.fillRect(x + 1, y + 1, w - 1, h - 3);
                     case RIGHT -> g.fillRect(x, y + 1, w - 2, h - 3);

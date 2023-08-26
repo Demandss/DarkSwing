@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.swing.*;
 import java.awt.*;
 
-public class MenuBar extends JMenuBar {
+public class DarkMenuBar extends JMenuBar {
 
     @Getter @Setter
     private boolean canAddNewElement;

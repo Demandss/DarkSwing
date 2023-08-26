@@ -1,36 +1,36 @@
 package su.demands.darkswing.elements.label;
 
-import su.demands.darkswing.Colors;
+import su.demands.darkswing.DarkSwingColors;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Label extends JLabel {
+public class DarkLabel extends JLabel {
 
-    public Label(String text, Icon icon, int horizontalAlignment) {
+    public DarkLabel(String text, Icon icon, int horizontalAlignment) {
         super(text, icon, horizontalAlignment);
 
-        setForeground(Colors.TEXT_FOREGROUND);
+        setForeground(DarkSwingColors.TEXT_FOREGROUND);
         setFont(new Font("Inter", Font.PLAIN,14));
     }
 
-    public Label(String text, int horizontalAlignment) {
+    public DarkLabel(String text, int horizontalAlignment) {
         this(text, null, horizontalAlignment);
     }
 
-    public Label(String text) {
+    public DarkLabel(String text) {
         this(text, null, LEADING);
     }
 
-    public Label(Icon image, int horizontalAlignment) {
+    public DarkLabel(Icon image, int horizontalAlignment) {
         this(null, image, horizontalAlignment);
     }
 
-    public Label(Icon image) {
+    public DarkLabel(Icon image) {
         this(null, image, CENTER);
     }
 
-    public Label() {
+    public DarkLabel() {
         this("", null, LEADING);
     }
 }

@@ -2,7 +2,7 @@ package su.demands.darkswing.elements.textfield;
 
 import lombok.Getter;
 import lombok.Setter;
-import su.demands.darkswing.Colors;
+import su.demands.darkswing.DarkSwingColors;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-public class TextPrompt extends JLabel implements FocusListener, DocumentListener
+public class DarkTextPrompt extends JLabel implements FocusListener, DocumentListener
 {
     public enum Show
     {
@@ -32,12 +32,12 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
     private boolean showPromptOnce;
     private int focusLost;
 
-    public TextPrompt(String text, JTextComponent component)
+    public DarkTextPrompt(String text, JTextComponent component)
     {
         this(text, component, Show.ALWAYS);
     }
 
-    public TextPrompt(String text, JTextComponent component, Show show)
+    public DarkTextPrompt(String text, JTextComponent component, Show show)
     {
         this.component = component;
         setShow( show );
@@ -45,7 +45,7 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
 
         setText( text );
         setFont( component.getFont() );
-        setForeground( Colors.TEXT_GHOSTLY_FOREGROUND );
+        setForeground( DarkSwingColors.TEXT_GHOSTLY_FOREGROUND );
         setBorder( new EmptyBorder(component.getInsets()) );
         setHorizontalAlignment(JLabel.LEADING);
 
